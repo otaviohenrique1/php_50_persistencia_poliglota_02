@@ -19,3 +19,12 @@ services:
       MONGO_INITDB_DATABASE: e_commerce
       MONGO_INITDB_ROOT_PASSWORD: senha
       MONGO_INITDB_ROOT_USERNAME: usuario
+  busca_textual:
+    image: elasticsearch:8.10.2
+    environment:
+      - xpack.security.enabled=false
+      - discovery.type=single-node
+  colunares:
+    image: cassandra:4.1.3
+  mensageria:
+    image: rabbitmq:3.9.29
